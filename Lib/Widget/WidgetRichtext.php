@@ -17,38 +17,49 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-namespace FacturaScripts\Plugins\WidgetRichText;
+namespace FacturaScripts\Plugins\WidgetRichText\Lib\Widget;
 
-use FacturaScripts\Core\Template\InitClass;
-
-// require_once __DIR__ . '/vendor/autoload.php';
+use FacturaScripts\Dinamic\Lib\AssetManager;
+use FacturaScripts\Dinamic\Lib\Widget\WidgetTextarea;
 
 /**
- * Description of Init
+ * Add a TinyMCE editor to the textarea.
  *
  * @author Jose Antonio Cuello Principal <yopli2000@gmail.com>
  */
-class Init extends InitClass
+class WidgetRichtext extends WidgetTextarea
 {
 
     /**
-     * Code to load every time FacturaScripts starts.
+     * Add the necessary assets for the widget.
+     *
+     * @return void
      */
-    public function init(): void
+    protected function assets()
     {
+        AssetManager::addJs(FS_ROUTE . '/Plugins/WidgetRichText/node_modules/tinymce/tinymce.min.js');
+        AssetManager::addJs(FS_ROUTE . '/Dinamic/Assets/JS/WidgetRichText.js');
     }
 
     /**
-     * Code to load every time the plugin is enabled or updated.
+     * Return the HTML code for the input form.
+     *
+     * @param string $type
+     * @param string $extraClass
+     * @return string
      */
-    public function update(): void
+    protected function inputHtml($type = 'text', $extraClass = 'widget-tinymce')
     {
+        return parent::inputHtml($type, $extraClass);
     }
 
     /**
-     * Code that is executed when uninstalling a plugin.
+     * Return the HTML code for the textual representation.
+     *
+     * @return string
      */
-    public function uninstall(): void
+    protected function show()
     {
+        return is_null($this->value) ? '-' : '<i class="fa-regular fa-rectangle-list"></i>';
     }
 }

@@ -3,17 +3,18 @@ Software de código abierto de facturación y contabilidad para pequeñas y medi
 Software ERP de código abierto. Construido sobre PHP, utilizando de componentes Symfony y Bootstrap 4.
 Fácil y potente.
 
-# WidgetTinyMCE
+# WidgetRichText
 Plugin que añade un widget para la edición de texto enriquecido a FacturaScripts.
+Utiliza el editor [TinyMCE](https://www.tiny.cloud/tinymce/) en su versión comunitaria.
 
 ## Nombre de carpeta
-Como con todos los plugins, la carpeta se debe llamar igual que el plugin. En este caso **WidgetTinyMCE**.
+Como con todos los plugins, la carpeta se debe llamar igual que el plugin. En este caso **WidgetRichText**.
 
 
 ## Más información
 <ul>
     <li>General info: https://www.facturascripts.com</li>
-    <li>Plugin info:  https://www.facturascripts.com/plugins/widgettinymce</li>
+    <li>Plugin info:  https://www.facturascripts.com/plugins/widgetrichtext</li>
 </ul>
 
 
