@@ -21,8 +21,6 @@ namespace FacturaScripts\Plugins\WidgetRichText;
 
 use FacturaScripts\Core\Template\InitClass;
 
-// require_once __DIR__ . '/vendor/autoload.php';
-
 /**
  * Description of Init
  *
