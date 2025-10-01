@@ -1,7 +1,7 @@
 <?php
 /**
  * This file is part of WidgetRichText plugin for FacturaScripts.
- * FacturaScripts Copyright (C) 2015-2024 Carlos Garcia Gomez <carlos@facturascripts.com>
+ * FacturaScripts Copyright (C) 2015-2025 Carlos Garcia Gomez <carlos@facturascripts.com>
  * WidgetRichText Copyright (C) 2024-2024 Jose Antonio Cuello Principal <yopli2000@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
@@ -19,6 +19,7 @@
  */
 namespace FacturaScripts\Plugins\WidgetRichText\Lib\Widget;
 
+use FacturaScripts\Core\Tools;
 use FacturaScripts\Dinamic\Lib\AssetManager;
 use FacturaScripts\Dinamic\Lib\Widget\WidgetTextarea;
 
@@ -29,16 +30,16 @@ use FacturaScripts\Dinamic\Lib\Widget\WidgetTextarea;
  */
 class WidgetRichtext extends WidgetTextarea
 {
-
     /**
      * Add the necessary assets for the widget.
      *
      * @return void
      */
-    protected function assets()
+    protected function assets(): void
     {
-        AssetManager::addJs(FS_ROUTE . '/Plugins/WidgetRichText/node_modules/tinymce/tinymce.min.js');
-        AssetManager::addJs(FS_ROUTE . '/Dinamic/Assets/JS/WidgetRichText.js');
+        $route = Tools::config('route');
+        AssetManager::addJs($route . '/Plugins/WidgetRichText/node_modules/tinymce/tinymce.min.js');
+        AssetManager::addJs($route . '/Dinamic/Assets/JS/WidgetRichText.js');
     }
 
     /**
@@ -48,7 +49,7 @@ class WidgetRichtext extends WidgetTextarea
      * @param string $extraClass
      * @return string
      */
-    protected function inputHtml($type = 'text', $extraClass = 'widget-tinymce')
+    protected function inputHtml($type = 'text', $extraClass = 'widget-tinymce'): string
     {
         return parent::inputHtml($type, $extraClass);
     }
@@ -58,7 +59,7 @@ class WidgetRichtext extends WidgetTextarea
      *
      * @return string
      */
-    protected function show()
+    protected function show(): string
     {
         return is_null($this->value) ? '-' : '<i class="fa-regular fa-rectangle-list"></i>';
     }
