@@ -27,7 +27,7 @@ window.onload = function () {
     const useDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
     tinymce.init({
         selector: '.widget-tinymce',
-        plugins: 'print preview paste importcss searchreplace autolink save code visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern noneditable quickbars emoticons',
+        plugins: 'print preview paste importcss searchreplace autolink save code visualblocks visualchars fullscreen image link media template codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount quickbars emoticons',
         license_key: 'gpl',
         promotion: false,
         skin: useDarkMode ? 'oxide-dark' : 'oxide',
