@@ -25,14 +25,16 @@
  */
 window.onload = function () {
     const useDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
     tinymce.init({
         selector: '.widget-tinymce',
-        plugins: 'print preview paste importcss searchreplace autolink save code visualblocks visualchars fullscreen image link media template codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount quickbars emoticons',
+        plugins: 'preview importcss searchreplace autolink save code visualblocks visualchars fullscreen image link media codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount quickbars emoticons',
         license_key: 'gpl',
         promotion: false,
         skin: useDarkMode ? 'oxide-dark' : 'oxide',
         menubar: 'file edit view insert format tools table',
-        toolbar: "fullscreen preview print | undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | forecolor backcolor removeformat | align numlist bullist | link image | table media | lineheight outdent indent| charmap emoticons | code | pagebreak anchor",
+        toolbar: "fullscreen preview | undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | forecolor backcolor removeformat | align numlist bullist | link image | table media | lineheight outdent indent | charmap emoticons | code | pagebreak anchor",
         language: 'es',
+        language_url: '/Plugins/WidgetRichText/Langs/es.js'
     });
 };
