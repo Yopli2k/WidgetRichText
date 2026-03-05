@@ -31,6 +31,7 @@ window.onload = function () {
         plugins: 'preview importcss searchreplace autolink save code visualblocks visualchars fullscreen image link media codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount quickbars emoticons',
         license_key: 'gpl',
         promotion: false,
+        height: 250,
         skin: useDarkMode ? 'oxide-dark' : 'oxide',
         menubar: 'file edit view insert format tools table',
         toolbar: "fullscreen preview | undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | forecolor backcolor removeformat | align numlist bullist | link image | table media | lineheight outdent indent | charmap emoticons | code | pagebreak anchor",
