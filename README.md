@@ -50,3 +50,4 @@ https://www.facturascripts.com
 - [Pagos Múltiples](https://facturascripts.com/plugins/pagosmultiples)
 - LawFirm: Solución sectorial para despachos de abogacía
 - CourseManagement: Solución sectorial para gestión de cursos de formación subvencionados</li>
+- GestionVeterinaria: Solución sectorial para administración de clínicas veterinarias</li>
