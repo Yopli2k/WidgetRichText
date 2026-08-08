@@ -3,7 +3,8 @@
 /Dinamic/
 /doc/
 /MyFiles/
-/node_modules/
+/node_modules/*
+!/node_modules/tinymce/
 /Plugins/
 /vendor/
 .DS_Store

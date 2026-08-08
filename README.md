@@ -36,6 +36,11 @@ Como con todos los plugins, la carpeta se debe llamar igual que el plugin. En es
 ## Documentación / Issues / Feedback
 https://www.facturascripts.com
 
+## Licencia y componentes de terceros
+El plugin **WidgetRichText** se distribuye bajo la licencia GNU Lesser General Public License v3, cuyo texto acompaña al plugin en el archivo `LICENSE`.
+
+El plugin incorpora **TinyMCE** en su edición community, en `node_modules/tinymce`, con copyright de Ephox Corporation DBA Tiny Technologies, Inc. y licenciado bajo la [GNU General Public License versión 2 o posterior](http://www.gnu.org/licenses/gpl.html). Los términos completos viajan en `node_modules/tinymce/license.md` y el código fuente está disponible en [github.com/tinymce/tinymce](https://github.com/tinymce/tinymce). Es esa licencia community la que declara el editor al arrancar mediante la opción `license_key: 'gpl'`.
+
 ## Enlaces de interés
 - [Cómo instalar plugins en FacturaScripts](https://facturascripts.com/publicaciones/como-instalar-un-plugin-en-facturascripts)
 - [Programa para hacer facturas gratis](https://facturascripts.com/programa-para-hacer-facturas)

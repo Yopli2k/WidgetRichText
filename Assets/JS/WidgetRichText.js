@@ -20,22 +20,47 @@
 'use strict';
 
 /**
- * Main process.
- *  - init tinymce editor.
+ * Height of the editor: data-height wins over data-rows, and 250 px when neither is set.
+ *
+ * @param {HTMLTextAreaElement} element
+ * @returns {string|number}
  */
-window.onload = function () {
+function widgetRichTextHeight(element) {
+    if (element.dataset.height) {
+        return element.dataset.height;
+    }
+
+    const rows = parseInt(element.dataset.rows, 10);
+
+    // ~24 px per line plus the room taken by the menu and the toolbar
+    return rows > 0 ? (rows * 24) + 120 : 250;
+}
+
+/**
+ * Main process.
+ *  - init tinymce editor, one by one, so each one gets its own height.
+ */
+window.addEventListener('load', function () {
     const useDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-    tinymce.init({
-        selector: '.widget-tinymce',
-        plugins: 'preview importcss searchreplace autolink save code visualblocks visualchars fullscreen image link media codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount quickbars emoticons',
-        license_key: 'gpl',
-        promotion: false,
-        height: 250,
-        skin: useDarkMode ? 'oxide-dark' : 'oxide',
-        menubar: 'file edit view insert format tools table',
-        toolbar: "fullscreen preview | undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | forecolor backcolor removeformat | align numlist bullist | link image | table media | lineheight outdent indent | charmap emoticons | code | pagebreak anchor",
-        language: 'es',
-        language_url: '/Plugins/WidgetRichText/Langs/es.js'
+    document.querySelectorAll('.widget-tinymce').forEach(function (element) {
+        const options = {
+            target: element,
+            plugins: 'preview importcss searchreplace autolink save code visualblocks visualchars fullscreen image link media codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount quickbars emoticons',
+            license_key: 'gpl',
+            promotion: false,
+            height: widgetRichTextHeight(element),
+            skin: useDarkMode ? 'oxide-dark' : 'oxide',
+            menubar: 'file edit view insert format tools table',
+            toolbar: "fullscreen preview | undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | forecolor backcolor removeformat | align numlist bullist | link image | table media | lineheight outdent indent | charmap emoticons | code | pagebreak anchor"
+        };
+
+        // php solo emite el idioma cuando hay pack para el usuario, si no el editor usa su inglés interno
+        if (element.dataset.language) {
+            options.language = element.dataset.language;
+            options.language_url = element.dataset.languageUrl;
+        }
+
+        tinymce.init(options);
     });
-};
+});
