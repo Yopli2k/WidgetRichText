@@ -2,6 +2,11 @@
 
 Todos los cambios notables en este proyecto se documentarán en este archivo.
 
+## [2.03] - 2026-09-15
+
+### Nuevas funcionalidades y mejoras
+- Subido el requisito mínimo de FacturaScripts a 2026.5.
+
 ## [2.02] - 2026-08-08
 
 ### Nuevas funcionalidades y mejoras

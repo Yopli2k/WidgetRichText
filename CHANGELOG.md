@@ -2,6 +2,11 @@
 
 All significant changes to this project will be documented in this file.
 
+## [2.03] - 2026-09-15
+
+### New Features and Improvements
+- Upgraded the minimum FacturaScripts requirement to 2026.5.
+
 ## [2.02] - 2026-08-08
 
 ### New Features and Improvements

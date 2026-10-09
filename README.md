@@ -27,10 +27,8 @@ Como con todos los plugins, la carpeta se debe llamar igual que el plugin. En es
 
 
 ## Más información
-<ul>
-    <li>General info: https://www.facturascripts.com</li>
-    <li>Plugin info:  https://www.facturascripts.com/plugins/widgetrichtext</li>
-</ul>
+- [Información general](https://www.facturascripts.com)
+- [Información del plugin](https://www.facturascripts.com/plugins/widgetrichtext)
 
 
 ## Documentación / Issues / Feedback
